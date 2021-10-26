@@ -8,7 +8,7 @@ from joblib import load
 import pandas as pd
 
 # Load the model
-assert os.path.exists(train_model.path_model), "The model {} should exist".format(path_model)
+assert os.path.exists(train_model.path_model), "The model {} should exist".format(train_model.path_model)
 model = load(train_model.path_model)
 
 # Instantiate the app.

@@ -12,7 +12,7 @@ path_scores = os.path.abspath(os.path.join(__file__, os.path.pardir,  "scores.cs
 # Arrange
 @pytest.fixture
 def data():
-    path_data = os.path.join(os.path.dirname(os.getcwd()), "data/census_clean.csv")
+    path_data = os.path.abspath(os.path.join(__file__, *[os.path.pardir]*3, "data/census_clean.csv"))
     data = pd.read_csv(path_data)
     data_processed, y_data, encoder = train_model.process_data(data, categorical_features=train_model.cat_features, label=train_model.label, training=True)
     return data_processed, y_data
