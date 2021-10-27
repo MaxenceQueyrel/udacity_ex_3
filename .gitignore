@@ -1,5 +1,4 @@
 *.pkl
 *.csv
-*.txt
 __pycache__
 .idea
