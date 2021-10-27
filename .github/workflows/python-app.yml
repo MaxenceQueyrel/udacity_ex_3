@@ -23,6 +23,11 @@ jobs:
       AWS_DEFAULT_OUTPUT: json
     steps:
     - uses: actions/checkout@v2
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        role-to-assume: arn:aws:iam::547785953663:user/github-action
+        aws-region: eu-west-3
     - uses: iterative/setup-dvc@v1
     - name: Set up Python 3.8
       uses: actions/setup-python@v2
