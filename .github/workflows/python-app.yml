@@ -22,7 +22,7 @@ jobs:
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@master
       with:
-        role-to-assume: arn:aws:iam::547785953663:user/Maxence-Udacity
+        role-to-assume: arn:aws:iam::547785953663:user/github-action
         aws-region: eu-west-3
     - name: Set up Python 3.8
       uses: actions/setup-python@v2
