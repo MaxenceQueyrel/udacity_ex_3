@@ -23,6 +23,11 @@ jobs:
       with:
         role-to-assume: arn:aws:iam::547785953663:user/github-action
         aws-region: eu-west-3
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_DEFAULT_REGION: eu-west-3
+        AWS_DEFAULT_OUTPUT: json
     - uses: iterative/setup-dvc@v1
     - name: Set up Python 3.8
       uses: actions/setup-python@v2
