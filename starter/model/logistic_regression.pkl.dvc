@@ -1,0 +1,4 @@
+outs:
+- md5: a65606716c2aed7b51571bdb300cf12c
+  size: 4952
+  path: logistic_regression.pkl
