@@ -9,6 +9,12 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import f1_score
 from joblib import dump, load
 
+path_data = os.path.abspath(os.path.join(__file__, os.path.pardir, os.path.pardir, "data/census_clean.csv"))
+path_model = os.path.abspath(os.path.join(__file__, os.path.pardir, os.path.pardir, "model/logistic_regression.pkl"))
+path_scores = os.path.abspath(
+    os.path.join(__file__, os.path.pardir, os.path.pardir, "model/logistic_regression_scores.csv"))
+path_encoder = os.path.abspath(os.path.join(__file__, os.path.pardir, os.path.pardir, "model/encoder.pkl"))
+
 
 cat_features = [
     "workclass",
@@ -96,12 +102,6 @@ def score_categorical_slices(model, data, encoder):
 
 if __name__ == "__main__":
     # Add code to load in the data.
-    path_data = os.path.abspath(os.path.join(__file__, os.path.pardir, os.path.pardir, "data/census_clean.csv"))
-    path_model = os.path.abspath(
-        os.path.join(__file__, os.path.pardir, os.path.pardir, "model/logistic_regression.pkl"))
-    path_scores = os.path.abspath(
-        os.path.join(__file__, os.path.pardir, os.path.pardir, "model/logistic_regression_scores.csv"))
-    path_encoder = os.path.abspath(os.path.join(__file__, os.path.pardir, os.path.pardir, "model/encoder.pkl"))
 
     data = pd.read_csv(path_data)
 
