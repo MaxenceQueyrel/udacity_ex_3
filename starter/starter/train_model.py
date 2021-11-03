@@ -9,16 +9,6 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import f1_score
 from joblib import dump, load
 
-# Add code to load in the data.
-path_data = os.path.abspath(os.path.join(__file__, os.path.pardir, os.path.pardir, "data/census_clean.csv"))
-path_model = os.path.abspath(os.path.join(__file__, os.path.pardir, os.path.pardir, "model/logistic_regression.pkl"))
-path_scores = os.path.abspath(os.path.join(__file__, os.path.pardir, os.path.pardir, "model/logistic_regression_scores.csv"))
-path_encoder = os.path.abspath(os.path.join(__file__, os.path.pardir, os.path.pardir, "model/encoder.pkl"))
-
-data = pd.read_csv(path_data)
-
-# Optional enhancement, use K-fold cross validation instead of a train-test split.
-train, test = train_test_split(data, test_size=0.20, random_state=42)
 
 cat_features = [
     "workclass",
@@ -105,6 +95,19 @@ def score_categorical_slices(model, data, encoder):
 
 
 if __name__ == "__main__":
+    # Add code to load in the data.
+    path_data = os.path.abspath(os.path.join(__file__, os.path.pardir, os.path.pardir, "data/census_clean.csv"))
+    path_model = os.path.abspath(
+        os.path.join(__file__, os.path.pardir, os.path.pardir, "model/logistic_regression.pkl"))
+    path_scores = os.path.abspath(
+        os.path.join(__file__, os.path.pardir, os.path.pardir, "model/logistic_regression_scores.csv"))
+    path_encoder = os.path.abspath(os.path.join(__file__, os.path.pardir, os.path.pardir, "model/encoder.pkl"))
+
+    data = pd.read_csv(path_data)
+
+    # Optional enhancement, use K-fold cross validation instead of a train-test split.
+    train, test = train_test_split(data, test_size=0.20, random_state=42)
+
     X_train, y_train, encoder = process_data(
         train, categorical_features=cat_features, label=label, training=True
     )
