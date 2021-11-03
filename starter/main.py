@@ -3,11 +3,14 @@ import os
 from fastapi import FastAPI
 from fastapi.encoders import jsonable_encoder
 from pydantic import BaseModel, Field
-from starter.starter import train_model
+from starter import train_model
 from joblib import load
 import pandas as pd
 import boto3
 import tempfile
+
+# Instantiate the app.
+app = FastAPI()
 
 # Load the model
 s3 = boto3.client('s3',
@@ -35,10 +38,6 @@ try:
 except Exception as e:
     print("The encoder should exists in the S3 bucket")
     raise e
-
-
-# Instantiate the app.
-app = FastAPI()
 
 
 # Define a GET on the specified endpoint.
