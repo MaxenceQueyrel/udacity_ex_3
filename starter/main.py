@@ -1,13 +1,17 @@
 # Put the code for your API here.
 import os
+import sys
 from fastapi import FastAPI
 from fastapi.encoders import jsonable_encoder
 from pydantic import BaseModel, Field
-from starter import train_model
 from joblib import load
 import pandas as pd
 import boto3
 import tempfile
+
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.realpath(__file__)), "starter"))
+import train_model
 
 # Instantiate the app.
 app = FastAPI()
