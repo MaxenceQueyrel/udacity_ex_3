@@ -3,6 +3,7 @@ import json
 
 response = requests.get('https://udacity-project-3-app.herokuapp.com/')
 
+print(response.status_code)
 print(response.json())
 
 sample = {"age": "32", "workclass": "Private", "fnlgt": "116138",
@@ -14,4 +15,5 @@ sample = {"age": "32", "workclass": "Private", "fnlgt": "116138",
 
 response = requests.post('https://udacity-project-3-app.herokuapp.com/inference/', data=json.dumps(sample))
 
+print(response.status_code)
 print(response.json())
