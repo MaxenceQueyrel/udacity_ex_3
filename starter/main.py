@@ -7,6 +7,15 @@ from starter.starter import train_model
 from joblib import load
 import pandas as pd
 
+
+# setup DVC on Heroku
+if "DYNO" in os.environ and os.path.isdir(".dvc"):
+    os.system("dvc config core.no_scm true")
+    if os.system("dvc pull") != 0:
+        exit("dvc pull failed")
+    os.system("rm -r .dvc .apt/usr/lib/dvc")
+
+
 # Load the model
 assert os.path.exists(train_model.path_model), "The model {} should exist".format(train_model.path_model)
 model = load(train_model.path_model)
