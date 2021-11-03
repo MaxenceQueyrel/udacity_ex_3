@@ -6,8 +6,8 @@ import pandas as pd
 import os
 from sklearn.preprocessing import OneHotEncoder, label_binarize
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import f1_score
-from joblib import dump, load
+from sklearn.metrics import fbeta_score, recall_score, precision_score
+from joblib import dump
 
 path_data = os.path.abspath(os.path.join(__file__, os.path.pardir, os.path.pardir, "data/census_clean.csv"))
 path_model = os.path.abspath(os.path.join(__file__, os.path.pardir, os.path.pardir, "model/logistic_regression.pkl"))
@@ -59,12 +59,16 @@ def train_model(model, X_train, y_train, path_save):
 
 
 # Evaluate the model
-def evaluate_model(model, X_test, y_test, path_save=None):
-    score = f1_score(y_test, model.predict(X_test), zero_division=0)
-    df_res = pd.DataFrame([score], columns=["f1-score"])
+def evaluate_model(model, X_test, y_test, path_save=None, beta=0.2):
+    predictions = model.predict(X_test)
+    fbeta = fbeta_score(y_test, predictions, beta=beta, zero_division=0)
+    recall = recall_score(y_test, predictions, zero_division=0)
+    precision = precision_score(y_test, predictions, zero_division=0)
+    df_res = pd.DataFrame([[fbeta, recall, precision]], columns=["fbeta-score", "recall",
+                                                                                    "precision"])
     if path_save:
         df_res.to_csv(path_save)
-    return score
+    return fbeta, recall, precision
 
 
 def score_age_slicing(model, data, encoder, age_slice=30):
@@ -79,12 +83,12 @@ def score_age_slicing(model, data, encoder, age_slice=30):
         data_low, categorical_features=cat_features, label=label, training=False, encoder=encoder
     )
 
-    score_high = evaluate_model(model, data_high, target_high, None)
-    score_low = evaluate_model(model, data_low, target_low, None)
-    print("F1-score of the model for people >= {} years old ({} samples): {:.2f}".
-          format(age_slice, data_high.shape[0], score_high))
-    print("F1-score of the model for people < {} years old ({} samples): {:.2f}".
-          format(age_slice, data_low.shape[0], score_low))
+    fbeta_high, recall_high, precision_high = evaluate_model(model, data_high, target_high, None)
+    fbeta_low, recall_low, precision_low = evaluate_model(model, data_low, target_low, None)
+    print("For people >= {} years old ({} samples): fbeta={:.2f}, recall={:.2f} and precision={:.2f}".
+          format(age_slice, data_high.shape[0], fbeta_high, recall_high, precision_high))
+    print("For people < {} years old ({} samples): fbeta={:.2f}, recall={:.2f} and precision={:.2f}".
+          format(age_slice, data_low.shape[0], fbeta_low, recall_low, precision_low))
 
 
 def score_categorical_slices(model, data, encoder):
@@ -123,8 +127,8 @@ if __name__ == "__main__":
     clf = LogisticRegression()
     train_model(clf, X_train, y_train, path_model)
 
-    score = evaluate_model(clf, X_test, y_test, path_scores)
-    print("F1-score of the model: {:.2f}".format(score))
+    fbeta, recall, precision = evaluate_model(clf, X_test, y_test, path_scores)
+    print("Scores of the model: fbeta={:.2f}, recall={:.2f} and precision={:.2f}".format(fbeta, recall, precision))
 
     score_age_slicing(clf, test, encoder, 30)
 
