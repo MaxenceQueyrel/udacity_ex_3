@@ -1,0 +1,4 @@
+['remote "data"']
+    url = s3://udacity-exercice-3/data
+['remote "model"']
+    url = s3://udacity-exercice-3/model
