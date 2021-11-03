@@ -62,6 +62,24 @@ class CensusSample(BaseModel):
     hours_per_week: int = Field(alias="hours-per-week")
     native_country: str = Field(alias="native-country")
 
+    class Config:
+        schema_extra = {
+            "example": {"age": "32",
+                        "workclass": "Private",
+                        "fnlgt": "116138",
+                        "education": "Masters",
+                        "education-num": "14",
+                        "marital-status": "Never-married",
+                        "occupation": "Tech-support",
+                        "relationship": "Not-in-family",
+                        "race": "Asian-Pac-Islander",
+                        "sex": "Male",
+                        "capital-gain": "0",
+                        "capital-loss": "0",
+                        "hours-per-week": "11",
+                        "native-country": "Taiwan"}
+        }
+
 
 @app.post("/inference/")
 async def model_inference(sample: CensusSample):
