@@ -1,4 +1,4 @@
 [core]
     remote = ../../../local_remote/
 ['remote "../../../local_remote/"']
-    url = s3://udacity-exercice-3/data
+    url = s3://udacity-exercice-3/

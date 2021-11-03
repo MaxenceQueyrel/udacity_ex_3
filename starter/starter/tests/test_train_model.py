@@ -5,6 +5,7 @@ from sklearn.utils.validation import check_is_fitted
 import pandas as pd
 from joblib import load
 import os
+import boto3
 
 path_model = os.path.abspath(os.path.join(__file__, os.path.pardir, "model.pkl"))
 path_scores = os.path.abspath(os.path.join(__file__, os.path.pardir,  "scores.csv"))
