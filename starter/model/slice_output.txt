@@ -1,0 +1,115 @@
+
+######### Feature: workclass #########
+People with workclass = Private (4578 samples) have scores: precision=0.71, recall=0.26, fbeta=0.38
+People with workclass = State-gov (254 samples) have scores: precision=0.85, recall=0.30, fbeta=0.44
+People with workclass = Self-emp-not-inc (498 samples) have scores: precision=0.81, recall=0.32, fbeta=0.46
+People with workclass = Self-emp-inc (212 samples) have scores: precision=0.95, recall=0.32, fbeta=0.48
+People with workclass = Federal-gov (191 samples) have scores: precision=0.68, recall=0.19, fbeta=0.29
+People with workclass = Local-gov (387 samples) have scores: precision=0.61, recall=0.25, fbeta=0.35
+People with workclass = ? (389 samples) have scores: precision=0.59, recall=0.24, fbeta=0.34
+People with workclass = Without-pay (4 samples) have scores: precision=1.00, recall=1.00, fbeta=1.00
+
+######### Feature: education #########
+People with education = Some-college (1485 samples) have scores: precision=0.61, recall=0.23, fbeta=0.34
+People with education = HS-grad (2085 samples) have scores: precision=0.60, recall=0.21, fbeta=0.31
+People with education = Bachelors (1053 samples) have scores: precision=0.82, recall=0.29, fbeta=0.43
+People with education = Masters (369 samples) have scores: precision=0.89, recall=0.30, fbeta=0.45
+People with education = Assoc-acdm (198 samples) have scores: precision=0.93, recall=0.28, fbeta=0.43
+People with education = 7th-8th (141 samples) have scores: precision=0.25, recall=0.17, fbeta=0.20
+People with education = 11th (225 samples) have scores: precision=0.70, recall=0.64, fbeta=0.67
+People with education = Assoc-voc (273 samples) have scores: precision=0.54, recall=0.24, fbeta=0.33
+People with education = Prof-school (116 samples) have scores: precision=0.94, recall=0.35, fbeta=0.50
+People with education = 9th (115 samples) have scores: precision=0.50, recall=0.33, fbeta=0.40
+People with education = 5th-6th (62 samples) have scores: precision=0.50, recall=0.50, fbeta=0.50
+People with education = 10th (183 samples) have scores: precision=0.57, recall=0.33, fbeta=0.42
+People with education = Doctorate (77 samples) have scores: precision=1.00, recall=0.33, fbeta=0.50
+People with education = 12th (98 samples) have scores: precision=0.25, recall=0.20, fbeta=0.22
+People with education = 1st-4th (23 samples) have scores: precision=0.00, recall=1.00, fbeta=0.00
+People with education = Preschool (10 samples) have scores: precision=1.00, recall=1.00, fbeta=1.00
+
+######### Feature: marital-status #########
+People with marital-status = Divorced (920 samples) have scores: precision=0.56, recall=0.37, fbeta=0.44
+People with marital-status = Married-civ-spouse (2950 samples) have scores: precision=0.85, recall=0.25, fbeta=0.39
+People with marital-status = Never-married (2126 samples) have scores: precision=0.40, recall=0.35, fbeta=0.37
+People with marital-status = Separated (209 samples) have scores: precision=0.60, recall=0.47, fbeta=0.53
+People with marital-status = Widowed (208 samples) have scores: precision=0.42, recall=0.26, fbeta=0.32
+People with marital-status = Married-spouse-absent (96 samples) have scores: precision=0.50, recall=0.38, fbeta=0.43
+People with marital-status = Married-AF-spouse (4 samples) have scores: precision=1.00, recall=0.00, fbeta=0.00
+
+######### Feature: occupation #########
+People with occupation = Adm-clerical (726 samples) have scores: precision=0.51, recall=0.22, fbeta=0.31
+People with occupation = Exec-managerial (838 samples) have scores: precision=0.85, recall=0.29, fbeta=0.43
+People with occupation = Machine-op-inspct (378 samples) have scores: precision=0.55, recall=0.23, fbeta=0.33
+People with occupation = Craft-repair (821 samples) have scores: precision=0.68, recall=0.26, fbeta=0.38
+People with occupation = Prof-specialty (828 samples) have scores: precision=0.86, recall=0.27, fbeta=0.41
+People with occupation = Sales (729 samples) have scores: precision=0.78, recall=0.31, fbeta=0.45
+People with occupation = Handlers-cleaners (273 samples) have scores: precision=0.33, recall=0.33, fbeta=0.33
+People with occupation = Other-service (667 samples) have scores: precision=0.23, recall=0.19, fbeta=0.21
+People with occupation = Protective-serv (136 samples) have scores: precision=0.54, recall=0.17, fbeta=0.25
+People with occupation = Priv-house-serv (26 samples) have scores: precision=1.00, recall=1.00, fbeta=1.00
+People with occupation = Transport-moving (317 samples) have scores: precision=0.70, recall=0.25, fbeta=0.37
+People with occupation = ? (389 samples) have scores: precision=0.59, recall=0.24, fbeta=0.34
+People with occupation = Farming-fishing (193 samples) have scores: precision=0.75, recall=0.32, fbeta=0.45
+People with occupation = Tech-support (189 samples) have scores: precision=0.78, recall=0.27, fbeta=0.41
+People with occupation = Armed-Forces (3 samples) have scores: precision=1.00, recall=0.00, fbeta=0.00
+
+######### Feature: relationship #########
+People with relationship = Not-in-family (1702 samples) have scores: precision=0.53, recall=0.36, fbeta=0.43
+People with relationship = Wife (322 samples) have scores: precision=0.82, recall=0.20, fbeta=0.32
+People with relationship = Husband (2590 samples) have scores: precision=0.86, recall=0.26, fbeta=0.40
+People with relationship = Unmarried (702 samples) have scores: precision=0.50, recall=0.36, fbeta=0.42
+People with relationship = Own-child (1019 samples) have scores: precision=0.14, recall=0.24, fbeta=0.17
+People with relationship = Other-relative (178 samples) have scores: precision=0.67, recall=0.75, fbeta=0.71
+
+######### Feature: race #########
+People with race = White (5595 samples) have scores: precision=0.73, recall=0.27, fbeta=0.39
+People with race = Black (599 samples) have scores: precision=0.71, recall=0.26, fbeta=0.38
+People with race = Other (55 samples) have scores: precision=0.80, recall=0.67, fbeta=0.73
+People with race = Asian-Pac-Islander (193 samples) have scores: precision=0.70, recall=0.26, fbeta=0.38
+People with race = Amer-Indian-Eskimo (71 samples) have scores: precision=0.56, recall=0.50, fbeta=0.53
+
+######### Feature: sex #########
+People with sex = Female (2126 samples) have scores: precision=0.53, recall=0.24, fbeta=0.33
+People with sex = Male (4387 samples) have scores: precision=0.77, recall=0.28, fbeta=0.41
+
+######### Feature: native-country #########
+People with native-country = United-States (5870 samples) have scores: precision=0.73, recall=0.27, fbeta=0.39
+People with native-country = Mexico (114 samples) have scores: precision=1.00, recall=0.00, fbeta=0.00
+People with native-country = Puerto-Rico (22 samples) have scores: precision=1.00, recall=0.33, fbeta=0.50
+People with native-country = El-Salvador (20 samples) have scores: precision=1.00, recall=1.00, fbeta=1.00
+People with native-country = ? (125 samples) have scores: precision=0.81, recall=0.42, fbeta=0.55
+People with native-country = Columbia (6 samples) have scores: precision=1.00, recall=1.00, fbeta=1.00
+People with native-country = Poland (14 samples) have scores: precision=1.00, recall=0.00, fbeta=0.00
+People with native-country = Cambodia (3 samples) have scores: precision=1.00, recall=0.00, fbeta=0.00
+People with native-country = Germany (32 samples) have scores: precision=1.00, recall=0.38, fbeta=0.56
+People with native-country = Philippines (35 samples) have scores: precision=0.80, recall=0.25, fbeta=0.38
+People with native-country = Canada (22 samples) have scores: precision=0.50, recall=0.25, fbeta=0.33
+People with native-country = Ecuador (5 samples) have scores: precision=1.00, recall=0.00, fbeta=0.00
+People with native-country = Italy (14 samples) have scores: precision=1.00, recall=0.50, fbeta=0.67
+People with native-country = Cuba (19 samples) have scores: precision=1.00, recall=0.20, fbeta=0.33
+People with native-country = Iran (12 samples) have scores: precision=1.00, recall=0.00, fbeta=0.00
+People with native-country = Jamaica (13 samples) have scores: precision=1.00, recall=1.00, fbeta=1.00
+People with native-country = Haiti (6 samples) have scores: precision=1.00, recall=1.00, fbeta=1.00
+People with native-country = South (13 samples) have scores: precision=0.33, recall=0.50, fbeta=0.40
+People with native-country = Taiwan (11 samples) have scores: precision=1.00, recall=0.25, fbeta=0.40
+People with native-country = Dominican-Republic (8 samples) have scores: precision=0.00, recall=1.00, fbeta=0.00
+People with native-country = Ireland (5 samples) have scores: precision=0.50, recall=1.00, fbeta=0.67
+People with native-country = Japan (11 samples) have scores: precision=0.00, recall=0.00, fbeta=0.00
+People with native-country = Scotland (3 samples) have scores: precision=1.00, recall=1.00, fbeta=1.00
+People with native-country = India (21 samples) have scores: precision=0.00, recall=0.00, fbeta=0.00
+People with native-country = Trinadad&Tobago (3 samples) have scores: precision=1.00, recall=1.00, fbeta=1.00
+People with native-country = Hungary (3 samples) have scores: precision=1.00, recall=0.00, fbeta=0.00
+People with native-country = England (14 samples) have scores: precision=1.00, recall=0.00, fbeta=0.00
+People with native-country = Laos (4 samples) have scores: precision=1.00, recall=0.00, fbeta=0.00
+People with native-country = Hong (8 samples) have scores: precision=1.00, recall=0.00, fbeta=0.00
+People with native-country = Greece (7 samples) have scores: precision=0.50, recall=0.50, fbeta=0.50
+People with native-country = Portugal (6 samples) have scores: precision=1.00, recall=1.00, fbeta=1.00
+People with native-country = Guatemala (13 samples) have scores: precision=1.00, recall=1.00, fbeta=1.00
+People with native-country = China (18 samples) have scores: precision=1.00, recall=0.38, fbeta=0.55
+People with native-country = France (5 samples) have scores: precision=1.00, recall=1.00, fbeta=1.00
+People with native-country = Nicaragua (7 samples) have scores: precision=1.00, recall=1.00, fbeta=1.00
+People with native-country = Vietnam (5 samples) have scores: precision=0.00, recall=1.00, fbeta=0.00
+People with native-country = Thailand (5 samples) have scores: precision=1.00, recall=1.00, fbeta=1.00
+People with native-country = Peru (5 samples) have scores: precision=1.00, recall=0.00, fbeta=0.00
+People with native-country = Honduras (4 samples) have scores: precision=1.00, recall=1.00, fbeta=1.00
+People with native-country = Yugoslavia (2 samples) have scores: precision=1.00, recall=1.00, fbeta=1.00

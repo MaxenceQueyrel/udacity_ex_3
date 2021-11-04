@@ -56,7 +56,7 @@ def test_train_model(data):
 def test_evaluate_model(data):
     data_processed, y_data = data
     clf = load(path_model)
-    fbeta, recall, precision = train_model.evaluate_model(clf, data_processed, y_data, path_scores)
+    precision, recall, fbeta = train_model.evaluate_model(clf, data_processed, y_data, path_scores)
     assert 0. <= fbeta <= 1.
     assert 0. <= recall <= 1.
     assert 0. <= precision <= 1.

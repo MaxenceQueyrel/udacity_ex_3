@@ -4,7 +4,7 @@ For additional information see the Model Card paper: https://arxiv.org/pdf/1810.
 
 ## Model Details
 
-Maxence Queyrel created this model. It is alogistic regression using the default hyperparameters in scikit-learn 1.0
+Maxence Queyrel created this model. It is a logistic regression using the default hyper parameters in scikit-learn 1.0
 
 ## Intended Use
 
@@ -20,7 +20,7 @@ The model wants to predict the salary of a population such as there are two clas
 
 ## Metrics
 
-The metric used is the F1-score
+The metrics used are fbeta, precision and recall
 
 ## Ethical Considerations
 
