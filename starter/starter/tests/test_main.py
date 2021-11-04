@@ -20,16 +20,16 @@ def test_inference_sample_1():
               "hours-per-week": "11", "native-country": "Taiwan"}
     r = client.post("/inference/", data=json.dumps(sample))
     assert r.status_code == 200
-    assert r.json() == ['Salary predicted is <=50K'] or r.json() == ['Salary predicted is >50K']
+    assert r.json() == ['Salary predicted is <=50K']
 
 
 def test_inference_sample_2():
-    sample = {"age": "53", "workclass": "Private", "fnlgt": "234721",
-              "education": "11th", "education-num": "7",
-              "marital-status": "Married-civ-spouse", "occupation": "Handlers-cleaners",
-              "relationship": "Husband", "race": "Black",
-              "sex": "Male", "capital-gain": "0", "capital-loss": "0",
+    sample = {"age": "42", "workclass": "Private", "fnlgt": "159449",
+              "education": "Bachelors", "education-num": "13",
+              "marital-status": "Married-civ-spouse", "occupation": "Exec-managerial",
+              "relationship": "Husband", "race": "White",
+              "sex": "Male", "capital-gain": "5178", "capital-loss": "0",
               "hours-per-week": "40", "native-country": "United-States"}
     r = client.post("/inference/", data=json.dumps(sample))
     assert r.status_code == 200
-    assert r.json() == ['Salary predicted is <=50K'] or r.json() == ['Salary predicted is >50K']
+    assert r.json() == ['Salary predicted is >50K']
